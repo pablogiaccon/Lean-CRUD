@@ -5,6 +5,16 @@ export const Container = styled.div`
   width: 100vw;
   display: flex;
   align-items: stretch;
+  position: relative;
+`;
+
+const overlayImage = keyframes`
+  from{
+    background: #40c8f4;
+  }
+  to{
+    background: #2179b5;
+  }
 `;
 
 export const OverlayImage = styled.div`
@@ -16,12 +26,12 @@ export const OverlayImage = styled.div`
 
   img {
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
 
   &:before {
     content: '';
-    background: #40c8f4;
+
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +44,20 @@ export const OverlayImage = styled.div`
 
   &:hover:before {
     opacity: 0.7;
+    animation: ${overlayImage} forwards;
   }
+
+  @media (max-width: 900px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: -10;
+
+    opacity: 0.2;
+  } ;
 `;
 
 const appearFromLeft = keyframes`
@@ -49,19 +72,30 @@ const appearFromLeft = keyframes`
 `;
 
 export const Content = styled.div`
+  margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
 
-  width: 40rem;
+  width: 30%;
   padding: 3.2rem;
 
   animation: ${appearFromLeft} 1s;
 
   h2 {
-    color: #414141;
+    color: #312e38;
     text-align: left;
     margin-bottom: 4.2rem;
     font-weight: normal;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+
+    padding: 5.6rem;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 10.4rem;
   }
 `;
 

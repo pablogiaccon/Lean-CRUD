@@ -27,12 +27,16 @@ export default createGlobalStyle`
   }
 
   body{
-    background: var(--color-background);
+    background: #fff;
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button{
     font: 16px Roboto Slab, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Roboto Slab, sans-serif;
   }
 
   button{

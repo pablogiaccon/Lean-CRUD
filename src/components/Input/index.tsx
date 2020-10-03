@@ -27,7 +27,6 @@ const Input: React.FC<IInputProps> = ({
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [isField, setIsField] = useState(false);
 
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
