@@ -50,6 +50,7 @@ const Input: React.FC<IInputProps> = ({ name, label, ...rest }) => {
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
         ref={inputRef}
+        // data-testid="input-test"
         {...rest}
       />
 

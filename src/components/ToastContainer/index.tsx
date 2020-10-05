@@ -14,7 +14,7 @@ interface IToastContainerProps {
 const ToastContainer: React.FC<IToastContainerProps> = ({ messages }) => {
   const messagesWithTransitions = useTransition(
     messages,
-    (message) => message.id,
+    message => message.id,
     {
       from: { right: '-120%', opacity: 0 },
       enter: { right: '0%', opacity: 1 },
@@ -24,7 +24,7 @@ const ToastContainer: React.FC<IToastContainerProps> = ({ messages }) => {
 
   const messagesMobileWithTransitions = useTransition(
     messages,
-    (message) => message.id,
+    message => message.id,
     {
       from: { top: '-120%', opacity: 0 },
       enter: { top: '0%', opacity: 1 },
@@ -33,7 +33,10 @@ const ToastContainer: React.FC<IToastContainerProps> = ({ messages }) => {
   );
 
   return (
-    <Container locationToast={window.innerWidth < 768 ? 1 : 0}>
+    <Container
+      locationToast={window.innerWidth < 768 ? 1 : 0}
+      data-testid="toast"
+    >
       {window.innerWidth < 768
         ? messagesMobileWithTransitions.map(({ item, key, props }) => (
             <Message key={key} message={item} style={props} />

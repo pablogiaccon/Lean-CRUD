@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import ToastContainer from '../components/ToastContainer';
 
 interface IToastContextData {
+  messages: IToastMessage[];
   addToast(message: Omit<IToastMessage, 'id'>): void;
   removeToast(id: string): void;
 }
@@ -38,7 +39,7 @@ export const ToastProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <ToastContext.Provider value={{ addToast, removeToast }}>
+    <ToastContext.Provider value={{ messages, addToast, removeToast }}>
       {children}
       <ToastContainer messages={messages} />
     </ToastContext.Provider>
