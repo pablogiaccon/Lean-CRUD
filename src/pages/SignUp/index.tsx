@@ -35,7 +35,10 @@ const SignUp: React.FC = () => {
       formRef.current?.setErrors({});
       const schema = Yup.object().shape({
         name: Yup.string()
-          .matches(/^[a-zA-Z ]{2,}$/, 'Nome inválido.')
+          .matches(
+            /^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{2,}$/,
+            'Nome inválido.',
+          )
           .required('Campo obrigatório.'),
         email: Yup.string()
           .email('E-mail inválido')

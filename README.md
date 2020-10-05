@@ -1,44 +1,173 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">
+  Lean Cadastro
+</h4>
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/pablogiaccon/Learn-CRUD">
 
-### `yarn start`
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/pablogiaccon/Learn-CRUD">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://github.com/pablogiaccon/Learn-CRUD/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/pablogiaccon/Learn-CRUD">
+  </a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <a href="https://github.com/pablogiaccon/Learn-CRUD/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/pablogiaccon/Learn-CRUD">
+  </a>
 
-### `yarn test`
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-executar">Requisitos</a>
+</p>
 
-### `yarn build`
+<br>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <img alt="Sign Up" src=".github/signup.png" width="100%">
+  <img alt="Dashboard" src=".github/dashboard.png" width="100%">
+</p>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<div id="tecnologias"></div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Tecnologias
 
-### `yarn eject`
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled-components](https://styled-components.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<div id="projeto"></div>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 💻 Sobre o Projeto
 
-## Learn More
+O projeto foi desenvolvido como teste para um processo seletivo. O projeto se resume em apenas duas pages, a Sign Up e a Dashboard e as funcionalidades especificadas pelo teste foram:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Usuário poderá se cadastrar com as seguintes informações:
+   - Nome completo
+   - E-mail
+   - CPF
+   - Telefone
+2. Persistir dados cadastrados no localStorage ou IndexedDB
+3. Usuário poderá listar todos os usuários cadastrados
+4. Usuário poderá remover usuários cadastrados
+5. Página deve ser responsiva
+6. Desenvolver formulário utilizando React ou Angular
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
+
+> Para complementar o teste, foi implementado testes End-To-End cobrindo todos os componentes, pages e hooks criados no projeto. A lib utilizada para implementação dos testes foi o [Jest](https://jestjs.io/)
+
+<br />
+
+<div id="como-executar"></div>
+
+## 🚀 Como executar o projeto
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
+
+<br />
+<br />
+
+### 🎲 Rodando o Projeto
+
+<br />
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/pablogiaccon/Learn-CRUD
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd lean-crud
+
+# Instale as dependências
+$ npm install
+# ou utilizando o yarn
+$ yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm start
+# ou
+$ yarn start
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+```
+
+<br />
+
+### 🧭 Realizando os testes
+
+<br />
+
+```bash
+# Após ter realizado o passo anterior para executar o projeto
+# Acesse a pasta do projeto no terminal/cmd
+$ cd devradar
+
+# Execute os testes implementados
+$ npm test
+# ou utilizando o yarn
+$ yarn test
+
+# Para executar o covarage e verificar a cobertura dos testes
+$ npm test:covarage
+# ou utilizando o yarn
+$ yarn test:covarage
+
+# No diretório do projeto abra o arquivo em
+# \coverage\lcov-report\index.html
+
+```
+
+<br />
+
+## 📝 Licença
+
+Copyright (c) 2020 Pablo de Souza Giaccon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+<br />
+
+Este projeto esta sobe a licença MIT.
+
+<br />
+Feito com ❤️ por Pablo Giaccon 👋🏽 [Entre em contato!](https://www.linkedin.com/in/pablogiaccon/)
+
+[typescript]: https://www.typescriptlang.org/
+[reactjs]: https://reactjs.org
+[yarn]: https://yarnpkg.com/
+[vscode]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[license]: https://opensource.org/licenses/MIT
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
