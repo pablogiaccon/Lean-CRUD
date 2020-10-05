@@ -15,6 +15,7 @@ export const Container = styled.div<IContainerProps>`
   padding: 1.6rem 1.2rem 0;
 
   width: 100%;
+  color: red;
 
   display: flex;
   align-items: center;
@@ -28,6 +29,19 @@ export const Container = styled.div<IContainerProps>`
     css`
       border-color: #c53030;
     `}
+
+  ${props =>
+    props.isFocused
+      ? css`
+          input {
+            color: #555555;
+          }
+        `
+      : css`
+          input {
+            color: #efeeed;
+          }
+        `}
 
   label {
     position: absolute;
@@ -43,15 +57,6 @@ export const Container = styled.div<IContainerProps>`
     flex: 1;
     height: 100%;
     border: 0;
-
-    ${props =>
-      props.isFocused
-        ? css`
-            color: #555555;
-          `
-        : css`
-            color: #efeeed;
-          `}
   }
 `;
 

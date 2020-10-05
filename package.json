@@ -18,7 +18,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.2.0",
+    "styled-components": "^5.1.1",
     "typescript": "~3.8.0",
     "uuid": "^8.3.0",
     "yup": "^0.29.3"
@@ -67,6 +67,7 @@
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4",
     "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-styled-components": "^7.0.3",
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.13.1"
   }

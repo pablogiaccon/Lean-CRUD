@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react';
+import 'jest-styled-components';
 
 import Input from '../../components/Input';
 
@@ -25,35 +26,24 @@ describe('Input component', () => {
     expect(getByPlaceholderText('E-mail')).toBeTruthy();
   });
 
-  // it('should render highlight on input focus', async () => {
-  //   const { getByPlaceholderText, getByTestId } = render(
-  //     <Input
-  //       name="email"
-  //       label="E-mail"
-  //       placeholder="E-mail"
-  //       data-testid="input-test"
-  //     />,
-  //   );
+  it('should render highlight on input focus', async () => {
+    const { getByPlaceholderText, getByTestId } = render(
+      <Input name="email" label="E-mail" placeholder="E-mail" />,
+    );
 
-  //   const inputElement = getByPlaceholderText('E-mail');
-  //   const inputTest = getByTestId('input-test');
+    const inputElement = getByPlaceholderText('E-mail');
+    const inputContainer = getByTestId('input-container');
 
-  //   fireEvent.focus(inputTest);
+    fireEvent.focus(inputElement);
 
-  //   await waitFor(() => {
-  //     expect(inputTest).toHaveStyle('color: #555555');
-  //   });
+    await waitFor(() => {
+      expect(inputContainer).toHaveStyleRule('color: #555555');
+    });
 
-  //   await waitFor(() => {
-  //     expect(inputElement.getElementsByTagName('input')).toHaveStyle(
-  //       'color: #555555;',
-  //     );
-  //   });
+    fireEvent.blur(inputElement);
 
-  //   fireEvent.blur(inputElement);
-
-  //   await waitFor(() => {
-  //     expect(inputElement).toHaveStyle('color: #efeeed;');
-  //   });
-  // });
+    await waitFor(() => {
+      expect(inputContainer).not.toHaveStyleRule('color: #555555');
+    });
+  });
 });

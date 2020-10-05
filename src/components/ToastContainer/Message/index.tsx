@@ -33,7 +33,7 @@ const Message: React.FC<IToastProps> = ({ style, message }) => {
   }, [removeToast, message.id]);
 
   return (
-    <Container>
+    <Container data-testid="mobile-toast">
       <MessageItem style={style} type={message.type || 'info'}>
         {icons[message.type || 'info']}
         <span>
@@ -41,7 +41,11 @@ const Message: React.FC<IToastProps> = ({ style, message }) => {
           {message.description && <p>{message.description}</p>}
         </span>
 
-        <button onClick={() => removeToast(message.id)} type="button">
+        <button
+          onClick={() => removeToast(message.id)}
+          type="button"
+          data-testid="remove-toast-mobile"
+        >
           <FiXCircle size={18} />
         </button>
       </MessageItem>

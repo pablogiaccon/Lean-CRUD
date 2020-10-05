@@ -35,7 +35,11 @@ const User: React.FC<IUserState> = ({ user, handleDelete }) => {
   return (
     <Container onClick={handleToggle} hasFocus={onFocused ? 1 : 0}>
       <div>
-        <FiTrash className="info" onClick={() => handleDelete(user.id)} />
+        <FiTrash
+          className="info"
+          onClick={() => handleDelete(user.id)}
+          data-testid="delete-user"
+        />
         <strong>
           <FiUser /> {user.name}
         </strong>

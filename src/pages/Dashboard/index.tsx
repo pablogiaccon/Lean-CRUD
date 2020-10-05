@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
       <HeaderWrapper>
         <header>
           <h2>Bem vindo!</h2>
-          <span onClick={handleLogout}>
+          <span onClick={handleLogout} data-testid="goback-button">
             <FiPower />
           </span>
         </header>

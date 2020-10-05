@@ -37,6 +37,7 @@ const Toast: React.FC<IToastProps> = ({ style, message }) => {
       type={message.type}
       hasdescription={!!message.description ? 1 : 0}
       style={style}
+      data-testid="web-toast"
     >
       {icons[message.type || 'info']}
 
@@ -45,7 +46,11 @@ const Toast: React.FC<IToastProps> = ({ style, message }) => {
         {message.description && <p>{message.description}</p>}
       </div>
 
-      <button onClick={() => removeToast(message.id)} type="button">
+      <button
+        onClick={() => removeToast(message.id)}
+        type="button"
+        data-testid="remove-toast-web"
+      >
         <FiXCircle size={18} />
       </button>
     </Container>

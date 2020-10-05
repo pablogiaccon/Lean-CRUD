@@ -27,6 +27,7 @@ describe('SignUp Page', () => {
     mockedHistoryPush.mockClear();
     mockedAddToast.mockClear();
   });
+
   it('should be able to sign up.', async () => {
     const { getByTestId, getByText } = render(<SignUp />);
 
@@ -146,6 +147,29 @@ describe('SignUp Page', () => {
 
     await waitFor(() => {
       expect(mockedHistoryPush).not.toHaveBeenCalled;
+    });
+  });
+
+  it('should be able to set user in localStorage', async () => {
+    const { getByTestId, getByText } = render(<SignUp />);
+    const setItemSpy = jest.spyOn(Storage.prototype, 'setItem');
+
+    const nameField = getByTestId('input-name');
+    const emailField = getByTestId('input-email');
+    const cpfField = getByTestId('input-cpf');
+    const phoneField = getByTestId('input-phone');
+
+    const buttonElement = getByText('Cadastrar');
+
+    fireEvent.change(nameField, { target: { value: 'John Doe' } });
+    fireEvent.change(emailField, { target: { value: 'johndoe@email.com' } });
+    fireEvent.change(cpfField, { target: { value: '122.055.566-57' } });
+    fireEvent.change(phoneField, { target: { value: '33333333' } });
+
+    fireEvent.click(buttonElement);
+
+    await waitFor(() => {
+      expect(setItemSpy).toHaveBeenCalledTimes(1);
     });
   });
 });
