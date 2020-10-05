@@ -37,7 +37,7 @@ const User: React.FC<IUserState> = ({ user, handleDelete }) => {
       <div>
         <FiTrash className="info" onClick={() => handleDelete(user.id)} />
         <strong>
-          <FiUser /> {user.name.toUpperCase()}
+          <FiUser /> {user.name}
         </strong>
         <p className="info">
           <FiMail /> <span>{user.email}</span>

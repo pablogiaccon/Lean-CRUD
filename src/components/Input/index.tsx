@@ -14,17 +14,9 @@ import { Container, Error } from './styles';
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label: string;
-  color?: string;
-  styleContainer?: object;
 }
 
-const Input: React.FC<IInputProps> = ({
-  name,
-  label,
-  styleContainer,
-  color,
-  ...rest
-}) => {
+const Input: React.FC<IInputProps> = ({ name, label, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -50,8 +42,7 @@ const Input: React.FC<IInputProps> = ({
     <Container
       hasError={!!error}
       isFocused={isFocused}
-      color={color}
-      style={styleContainer}
+      data-testid="input-container"
     >
       <label htmlFor={name}>{label}</label>
       <input

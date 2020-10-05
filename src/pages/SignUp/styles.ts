@@ -77,7 +77,7 @@ export const Content = styled.div`
   flex-direction: column;
 
   width: 30%;
-  padding: 3.2rem;
+  padding: 5.6rem;
 
   animation: ${appearFromLeft} 1s;
 
@@ -87,6 +87,12 @@ export const Content = styled.div`
     margin-bottom: 4.2rem;
     font-weight: normal;
   }
+
+  /* @media (max-width: 1200px) {
+    form input sp {
+      max-width: 100%;
+    }
+  } */
 
   @media (max-width: 900px) {
     width: 100%;

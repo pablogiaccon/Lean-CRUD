@@ -43,22 +43,15 @@ export const Container = styled.div<IContainerProps>`
     flex: 1;
     height: 100%;
     border: 0;
-    color: #efeeed;
-
-    &::placeholder {
-      color: #efeeed;
-    }
 
     ${props =>
-      props.isFocused &&
-      css`
-        color: #555555;
-      `}
-  }
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+      props.isFocused
+        ? css`
+            color: #555555;
+          `
+        : css`
+            color: #efeeed;
+          `}
   }
 `;
 

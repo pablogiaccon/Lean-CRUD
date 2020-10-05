@@ -33,9 +33,10 @@ const SignUp: React.FC = () => {
   const handleSignUp = useCallback(async (data: IFromState) => {
     try {
       formRef.current?.setErrors({});
-
       const schema = Yup.object().shape({
-        name: Yup.string().required('Campo obrigatório.'),
+        name: Yup.string()
+          .matches(/^[a-zA-Z ]{2,}$/, 'Nome inválido.')
+          .required('Campo obrigatório.'),
         email: Yup.string()
           .email('E-mail inválido')
           .required('Campo obrigatório.'),
@@ -43,6 +44,7 @@ const SignUp: React.FC = () => {
         phone: Yup.string()
           .min(8, 'Número muito pequeno.')
           .max(11, 'Número inválido')
+          .matches(/[0-9]{8,11}/, 'Somente os números')
           .required('Campo obrigatório.'),
       });
 
@@ -97,7 +99,7 @@ const SignUp: React.FC = () => {
     addToast({
       type: 'success',
       title: 'Nós amamos café!',
-      description: 'Quer fazer parte do nosso grupo? Faça seu cadastro!',
+      description: 'Quer fazer grupo, faça seu cadastro!',
     });
   }, []);
 
@@ -112,7 +114,7 @@ const SignUp: React.FC = () => {
 
   return (
     <Container>
-      <OverlayImage onClick={handleLoveCoffe}>
+      <OverlayImage onClick={handleLoveCoffe} data-testid="background-img">
         <img src={backgroundImg} alt="Coffee" />
       </OverlayImage>
       <Content>
@@ -122,17 +124,26 @@ const SignUp: React.FC = () => {
           ref={formRef}
           onSubmit={handleSignUp}
           onChange={() => handleValidForm()}
-          initialData={{
-            name: 'pablo',
-            email: 'pablo@pablo.com',
-            cpf: '122.055.566-57',
-            phone: '33333333',
-          }}
         >
-          <Input name="name" label="Nome completo" />
-          <Input name="email" label="E-mail" type="email" />
-          <Input name="cpf" label="CPF" maxLength={14} />
-          <Input name="phone" label="Telefone" maxLength={11} />
+          <Input data-testid="input-name" name="name" label="Nome completo" />
+          <Input
+            data-testid="input-email"
+            name="email"
+            label="E-mail"
+            type="email"
+          />
+          <Input
+            data-testid="input-cpf"
+            name="cpf"
+            label="CPF"
+            maxLength={14}
+          />
+          <Input
+            data-testid="input-phone"
+            name="phone"
+            label="Telefone"
+            maxLength={11}
+          />
 
           <SectionButtons>
             <Button type="submit" available={formValid} disabled={!formValid}>

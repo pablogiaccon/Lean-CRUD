@@ -25,6 +25,7 @@ export const Container = styled.div<IContainerProps>`
     border-radius: 10px;
     background: #2079b5;
     width: 100%;
+    height: max-content;
 
     > svg {
       position: absolute;
@@ -44,6 +45,7 @@ export const Container = styled.div<IContainerProps>`
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      margin-right: 1.2rem;
 
       svg {
         margin-right: 1.2rem;
