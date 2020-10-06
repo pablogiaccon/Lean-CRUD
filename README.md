@@ -1,6 +1,6 @@
-<h4 align="center">
+<h1 align="center">
   Lean Cadastro
-</h4>
+</h1>
 
 <br />
 
@@ -31,8 +31,11 @@
 
 <p align="center">
   <img alt="Sign Up" src=".github/signup.png" width="100%">
+  <br>
   <img alt="Dashboard" src=".github/dashboard.png" width="100%">
 </p>
+
+---
 
 <div id="tecnologias"></div>
 
@@ -43,6 +46,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [ReactJS](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled-components](https://styled-components.com/)
+- [Jest](https://jestjs.io/)
+- [@unform](https://unform.dev/) - Criação de formuários
+- [Yup](https://github.com/jquense/yup) - Validação de campos
 
 <br />
 
@@ -60,12 +66,16 @@ O projeto foi desenvolvido como teste para um processo seletivo. O projeto se re
 2. Persistir dados cadastrados no localStorage ou IndexedDB
 3. Usuário poderá listar todos os usuários cadastrados
 4. Usuário poderá remover usuários cadastrados
-5. Página deve ser responsiva
+5. Páginas devem ser responsivas
 6. Desenvolver formulário utilizando React ou Angular
 
 <br />
 
-> Para complementar o teste, foi implementado testes End-To-End cobrindo todos os componentes, pages e hooks criados no projeto. A lib utilizada para implementação dos testes foi o [Jest](https://jestjs.io/)
+> Para complementar o teste, foram implementados testes End-To-End cobrindo todos os componentes, pages e hooks criados no projeto. A lib utilizada para implementação dos testes foi o [Jest](https://jestjs.io/).
+
+> Para realizar a criação do formulário foi utilizado a biblioteca [@unform](https://unform.dev/), e para a validação dos campos foi utilizado o [Yup](https://github.com/jquense/yup).
+
+> Para validação do CPF foi implementado uma função [validCPF](src/utils/validCPF.ts).
 
 <br />
 
